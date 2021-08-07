@@ -1,0 +1,9 @@
+:root {
+    --boardLength: 20vw + 20vh;
+    --cellLength: calc((20vw + 20vh) / 3);
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}

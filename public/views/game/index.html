@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Battleship Room</title>
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
+    <script src="../../assets/js/default.js"></script>
+
+    <style>
+        .container {
+            text-align: center;
+            margin: auto;
+        }
+        
+        .board {
+            width: var(--boardLength);
+            height: var(--boardLength);
+        }
+        
+        .row {
+            width: 100%;
+            height: var(--cellLength);
+            margin: auto;
+        }
+        
+        .cell {
+            width: var(--cellLength);
+            height: var(--cellLength);
+            border: 1px solid gray;
+            line-height: calc(7vw + 7vh);
+            font-size: calc(5vw + 5vh);
+            margin: 0;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body onload="onLoad();">
+    <div class="container">
+        <div id="enemyBoard">
+
+        </div>
+    </div>
+
+    <div class="spacer" style="height: 50px;"></div>
+
+    <div class="container">
+        <div id="board">
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function onLoad() {
+        getPlayers();
+        drawBoard();
+    }
+</script>
+
+</html>
