@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Battleship Room</title>
+    <title>TicTacToe Room</title>
 
     <link rel="stylesheet" type="text/css" href="../../assets/css/default.css">
     <script src="../../assets/js/default.js"></script>
@@ -27,6 +27,7 @@
         }
         
         .cell {
+            font-family: 'Courier New', Courier, monospace;
             width: var(--cellLength);
             height: var(--cellLength);
             border: 1px solid gray;
@@ -36,14 +37,28 @@
             display: inline-block;
             cursor: pointer;
         }
+
+        #playAgain {
+            background-color: rgb(225, 225, 225);
+            border: 1px solid gray;
+            width: 100px;
+            height: "25px";
+            line-height: 150%;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        #playAgain:hover {
+            background-color: rgb(200, 200, 200);
+        }
     </style>
 </head>
 
 <body onload="onLoad();">
-    <div class="container">
-        <div id="enemyBoard">
 
-        </div>
+    <div class="center">
+        <h1>TicTacToe online</h1>
+        <h3 id="player" style="font-weight: 300;"></h3>
     </div>
 
     <div class="spacer" style="height: 50px;"></div>
@@ -52,6 +67,11 @@
         <div id="board">
 
         </div>
+        
+        <div class="spacer" style="height: 10px;"></div>
+
+        <a id="invite" class="center" style="font-size: 15pt; list-style: underline;"></a>
+        <div class="center" style="font-size: 18pt;">Share this link with a friend!</div>
     </div>
 </body>
 
@@ -59,6 +79,8 @@
     function onLoad() {
         getPlayers();
         drawBoard();
+        document.getElementById("invite").href = window.location.href;
+        document.getElementById("invite").innerHTML = window.location.href;
     }
 </script>
 
